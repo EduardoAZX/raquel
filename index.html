@@ -1,635 +1,357 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Meta Pixel (init; PageView/Lead disparam pelo capi.js com eventID) -->
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init','YOUR_PIXEL_ID');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-  <script src="/meta-capi/capi.js" defer></script>
-  <!-- End Meta Pixel -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dra. Raquel Almeida, especialista em Otomodelação. Método Otoslim: correção de orelhas de abano sem cirurgia, sem cortes, com recuperação imediata." />
   <title>Dra. Raquel Almeida · Otomodelação | Método Otoslim</title>
-  <meta name="description" content="Dra. Raquel Almeida, especialista em Otomodelação. Método Otoslim: correção de orelhas de abano sem cirurgia, sem cortes e com recuperação imediata." />
 
-  <!-- Favicon SVG inline · iniciais DR -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F7CBA1'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23090B0B'%3ER%3C/text%3E%3C/svg%3E" />
+  <!-- Favicon: iniciais DR -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'&gt;&lt;rect width='64' height='64' rx='14' fill='%23F7CBA1'/&gt;&lt;text x='50%25' y='54%25' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23090B0B' text-anchor='middle' dominant-baseline='middle'&gt;R&lt;/text&gt;&lt;/svg&gt;" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Meta Pixel placeholder (substituir ID real antes do deploy) -->
+  <script>
+    /* Meta Pixel — placeholder. Substituir 'YOUR_PIXEL_ID' pelo ID real. */
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    // fbq('init', 'YOUR_PIXEL_ID');
+    // fbq('track', 'PageView');
+  </script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <ul class="mobile-nav-links">
-    <li><a href="#resultados" class="mobile-link">Resultados</a></li>
-    <!-- <li><a href="#videos" class="mobile-link">Vídeos</a></li> -->
-    <li><a href="#contato" class="mobile-link">Contato</a></li>
-    <li><a href="#sobre" class="mobile-link">Sobre</a></li>
-  </ul>
-  <a href="#contato" class="mobile-cta mobile-link">Agendar avaliação</a>
-  <div class="mobile-theme-row">
-    <span>Alternar tema</span>
-    <button class="theme-toggle" id="themeToggleMobile" aria-label="Alternar tema">
-      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-  </div>
-</div>
 
-<!-- NAV -->
-<nav id="nav">
-  <div class="container nav-inner">
-    <a href="#" class="logo">Dra. <span>Raquel</span></a>
-    <ul class="nav-links">
-      <li><a href="#resultados">Resultados</a></li>
-      <!-- <li><a href="#videos">Vídeos</a></li> -->
-      <li><a href="#contato">Contato</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <a href="#contato" class="nav-cta">Agendar avaliação</a>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
+  <!-- ============ DOBRA 1 — HERO ============ -->
+  <section id="hero" class="hero" data-screen-label="01 Hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__grid">
 
-<!-- ═══════════════════════ HERO ═══════════════════════ -->
-<section class="hero" id="hero">
-  <div class="hero-bg-wrap" aria-hidden="true">
-    <div class="hero-bg-img"></div>
-    <div class="hero-overlay"></div>
-  </div>
-  <div class="hero-content fade-up d2">
-    <h1>Orelhas de abano?<br class="mobile-br"> A solução <span class="gold-text">definitiva</span>, sem cirurgia.</h1>
-    <p class="hero-sub fade-up d3">
-      Referência na correção de orelhas de abano com o exclusivo método Otoslim: resultado definitivo, sem cortes e com recuperação imediata.
-    </p>
-    <div class="hero-actions fade-up d4">
-      <a href="#contato" class="btn-primary">Quero minha avaliação</a>
-      <a href="#resultados" class="btn-ghost">Ver resultados reais</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════ BEFORE & AFTER ═══════════════════════ -->
-<section class="results-section" id="resultados">
-  <div class="container">
-    <div class="section-label">
-      <span class="badge"><span class="badge-dot"></span>Resultados reais</span>
-    </div>
-    <h2 class="section-title">Antes <span class="gold-text">&</span> Depois</h2>
-    <p class="section-sub">Casos reais tratados em consultório com o método Otoslim: correção precisa, natural e sem o estigma da orelha operada.</p>
-
-    <div class="ba-grid">
-      <!-- Card 1 -->
-      <div class="ba-card">
-        <div class="ba-image-wrap">
-          <div class="img-ph" role="img" aria-label="Correção natural, foto em breve">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="6" y="10" width="36" height="28" rx="4"/><circle cx="17" cy="20" r="3"/><path d="M8 34l10-9 6 5 7-6 9 10"/>
-            </svg>
-            <span class="img-ph-label">Correção natural</span>
-            <span class="img-ph-sub">Antes & depois</span>
-          </div>
+      <div class="hero__copy reveal">
+        <h1 class="h1">
+          Orelhas de abano?
+          <span class="h1__accent">A solução definitiva</span>
+        </h1>
+        <p class="lede">
+          Referência em correção de orelhas de abano com o exclusivo <strong>método Otoslim</strong>. Resultados definitivos, <strong>sem cortes</strong> e com recuperação imediata, para você recuperar sua autoestima sem passar por um centro cirúrgico.
+        </p>
+        <div class="hero__ctas">
+          <a href="#agendar" class="btn btn--primary">
+            Quero agendar minha avaliação
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a href="#resultados" class="btn btn--ghost">Ver resultados reais</a>
         </div>
-        <div class="ba-info">
-          <span class="ba-tag">Correção natural</span>
-          <p>Sem o estigma da "orelha operada" e sem cicatrizes visíveis, preservando o seu jeito.</p>
+
+        <ul class="hero__pills" aria-label="Diferenciais">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Sem cortes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Recuperação imediata</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Resultado natural</li>
+        </ul>
+      </div>
+
+      <div class="hero__visual reveal">
+        <div class="hero__photo">
+          <picture>
+            <img src="img/img.png" alt="Dra. Raquel Almeida — Especialista em Otomodelação" />
+          </picture>
         </div>
       </div>
-      <!-- Card 2 -->
-      <div class="ba-card">
-        <div class="ba-image-wrap">
-          <div class="img-ph" role="img" aria-label="Em consultório, foto em breve">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="6" y="10" width="36" height="28" rx="4"/><circle cx="17" cy="20" r="3"/><path d="M8 34l10-9 6 5 7-6 9 10"/>
-            </svg>
-            <span class="img-ph-label">Em consultório</span>
-            <span class="img-ph-sub">Antes & depois</span>
-          </div>
-        </div>
-        <div class="ba-info">
-          <span class="ba-tag">Em consultório</span>
-          <p>Procedimento sem cortes, com retorno imediato às atividades do dia a dia.</p>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="ba-card">
-        <div class="ba-image-wrap">
-          <div class="img-ph" role="img" aria-label="Resultado definitivo, foto em breve">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="6" y="10" width="36" height="28" rx="4"/><circle cx="17" cy="20" r="3"/><path d="M8 34l10-9 6 5 7-6 9 10"/>
-            </svg>
-            <span class="img-ph-label">Resultado definitivo</span>
-            <span class="img-ph-sub">Antes & depois</span>
-          </div>
-        </div>
-        <div class="ba-info">
-          <span class="ba-tag">Resultado definitivo</span>
-          <p>Reposicionamento da cartilagem com técnica minimamente invasiva e resultado duradouro.</p>
-        </div>
+
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Sem cirurgia</span><span>·</span>
+        <span>Sem cortes</span><span>·</span>
+        <span>Sem cicatrizes</span><span>·</span>
+        <span>Recuperação imediata</span><span>·</span>
+        <span>Método Otoslim</span><span>·</span>
+        <span>Resultado natural</span><span>·</span>
+        <span>Sem cirurgia</span><span>·</span>
+        <span>Sem cortes</span><span>·</span>
+        <span>Sem cicatrizes</span><span>·</span>
+        <span>Recuperação imediata</span><span>·</span>
+        <span>Método Otoslim</span><span>·</span>
+        <span>Resultado natural</span><span>·</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════ VIDEO RESULTS ═══════════════════════ -->
-<!-- ═══ SEÇÃO DE VÍDEOS (comentada até a Dra. Raquel ter os vídeos). Reativar removendo este comentário. ═══
-<section class="videos-section" id="videos">
-  <div class="container">
-    <div class="section-label">
-      <span class="badge"><span class="badge-dot"></span>Em vídeo</span>
+  <!-- ============ DOBRA 2 — PROVA SOCIAL ============ -->
+  <section id="resultados" class="proof" data-screen-label="02 Prova Social">
+    <div class="container">
+      <header class="section-head reveal">
+        <span class="eyebrow eyebrow--dark">
+          <span class="eyebrow__dot"></span>
+          Antes &amp; Depois
+        </span>
+        <h2 class="h2">
+          Resultados que <em>transformam vidas</em><br/>
+          e geram confiança.
+        </h2>
+        <p class="section-sub">
+          Casos reais de pacientes tratados em consultório com o método Otoslim: correção precisa, natural e sem o estigma da orelha operada.
+        </p>
+      </header>
+
+      <div class="ba-grid reveal" id="metodo">
+        <!-- Caso 1 -->
+        <article class="ba-card">
+          <div class="ba-card__pair">
+            <figure class="ba">
+              <span class="ba__label">Antes</span>
+              <img class="ba__img" src="img/antes-01.png" alt="Antes — caso 1" />
+            </figure>
+            <figure class="ba">
+              <span class="ba__label ba__label--after">Depois</span>
+              <img class="ba__img" src="img/depois-01.png" alt="Depois — caso 1" />
+            </figure>
+          </div>
+          <div class="ba-card__caption">
+            <h3>Correção precisa e natural</h3>
+            <p>Sem o estigma da "orelha operada" e sem cicatrizes visíveis.</p>
+          </div>
+        </article>
+
+        <!-- Caso 2 -->
+        <article class="ba-card">
+          <div class="ba-card__pair">
+            <figure class="ba">
+              <span class="ba__label">Antes</span>
+              <img class="ba__img" src="img/antes-02.png" alt="Antes — caso 2" />
+            </figure>
+            <figure class="ba">
+              <span class="ba__label ba__label--after">Depois</span>
+              <img class="ba__img" src="img/depois-02.png" alt="Depois — caso 2" />
+            </figure>
+          </div>
+          <div class="ba-card__caption">
+            <h3>Procedimento em consultório</h3>
+            <p>Retorno imediato às atividades do dia a dia, sem afastamento.</p>
+          </div>
+        </article>
+
+        <!-- Caso 3 -->
+        <article class="ba-card">
+          <div class="ba-card__pair">
+            <figure class="ba">
+              <span class="ba__label">Antes</span>
+              <img class="ba__img" src="img/antes-03.png" alt="Antes — caso 3" />
+            </figure>
+            <figure class="ba">
+              <span class="ba__label ba__label--after">Depois</span>
+              <img class="ba__img" src="img/depois-03.png" alt="Depois — caso 3" />
+            </figure>
+          </div>
+          <div class="ba-card__caption">
+            <h3>Resultado definitivo</h3>
+            <p>Reposicionamento da cartilagem com técnica minimamente invasiva.</p>
+          </div>
+        </article>
+
+        <!-- Caso 4 -->
+        <article class="ba-card">
+          <div class="ba-card__pair">
+            <figure class="ba">
+              <span class="ba__label">Antes</span>
+              <img class="ba__img" src="img/antes-04.png" alt="Antes — caso 4" />
+            </figure>
+            <figure class="ba">
+              <span class="ba__label ba__label--after">Depois</span>
+              <img class="ba__img" src="img/depois-04.png" alt="Depois — caso 4" />
+            </figure>
+          </div>
+          <div class="ba-card__caption">
+            <h3>Autoestima de volta</h3>
+            <p>Confiança para usar o cabelo preso, sem precisar se esconder.</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="seal glass reveal" aria-label="Selo de autoridade">
+        <div class="seal__num">+1.200</div>
+        <div class="seal__copy">
+          <strong>vidas transformadas</strong>
+          através do método Otoslim, sem cirurgia e sem afastamento.
+        </div>
+        <a href="#agendar" class="btn btn--dark seal__cta">
+          Quero mais informações
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </aside>
     </div>
-    <h2 class="section-title">Resultados em <span class="gold-text">movimento</span></h2>
-    <p class="section-sub">Acompanhe em vídeo a correção de orelhas de abano com o método Otoslim, com técnica e naturalidade.</p>
+  </section>
 
-    <div class="videos-grid">
-      <div class="video-card">
-        <div class="video-placeholder">
-          <div class="play-btn" aria-label="Reproduzir vídeo">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="video-duration">2:34</span>
-        </div>
-        <div class="video-info">
-          <h3>Método Otoslim na prática</h3>
-          <p>Veja o passo a passo da correção sem cortes, em consultório e com recuperação imediata.</p>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-placeholder">
-          <div class="play-btn" aria-label="Reproduzir vídeo">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="video-duration">3:12</span>
-        </div>
-        <div class="video-info">
-          <h3>Depoimento de paciente</h3>
-          <p>A experiência de quem recuperou a autoestima sem passar por um centro cirúrgico.</p>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-placeholder">
-          <div class="play-btn" aria-label="Reproduzir vídeo">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="video-duration">1:48</span>
-        </div>
-        <div class="video-info">
-          <h3>Antes & depois em movimento</h3>
-          <p>Resultado natural e definitivo, sem o estigma da orelha operada.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-═══ FIM SEÇÃO DE VÍDEOS ═══ -->
+  <!-- ============ DOBRA 3 — FORMULÁRIO ============ -->
+  <section id="agendar" class="form-section" data-screen-label="03 Formulário">
+    <div class="container form-section__grid">
 
-<!-- ═══════════════════════ CONTACT FORM ═══════════════════════ -->
-<section class="contact-section" id="contato">
-  <div class="container">
-    <div class="contact-inner">
-      <div class="contact-text">
-        <div class="section-label" style="text-align:left;">
-          <span class="badge"><span class="badge-dot"></span>Primeiro passo</span>
-        </div>
-        <h2 class="contact-title">Dê o primeiro passo para<br>a <span class="gold-text">sua nova versão</span></h2>
-        <p class="contact-desc">Preencha seus dados e nossa equipe entrará em contato pelo WhatsApp para tirar suas dúvidas e agendar sua avaliação.</p>
-        <div class="contact-perks">
-          <div class="perk"><span class="perk-icon">✓</span> Atendimento rápido e humanizado</div>
-          <div class="perk"><span class="perk-icon">✓</span> Avaliação individualizada do seu caso</div>
-          <div class="perk"><span class="perk-icon">✓</span> Procedimento sem cortes e sem cirurgia</div>
-          <div class="perk"><span class="perk-icon">✓</span> Seus dados protegidos · LGPD</div>
-        </div>
+      <div class="form-section__copy reveal">
+        <span class="eyebrow">
+          <span class="eyebrow__dot"></span>
+          Primeiro passo
+        </span>
+        <h2 class="h2 h2--light">
+          Dê o primeiro passo para a <em>sua nova versão</em>.
+        </h2>
+        <p class="form-section__sub">
+          Preencha os dados ao lado e nossa equipe entrará em contato pelo WhatsApp para tirar suas dúvidas e agendar sua avaliação.
+        </p>
+
+        <ul class="form-section__list">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            Atendimento rápido e humanizado
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            Avaliação individualizada do seu caso
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            Seus dados ficam protegidos · LGPD
+          </li>
+        </ul>
       </div>
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="form-group">
-          <label for="form-name">Nome completo</label>
-          <input type="text" id="form-name" name="nome" placeholder="Como devemos te chamar?" required />
+
+      <form class="lead-form glass reveal" id="leadForm" novalidate>
+        <h3 class="lead-form__title">Agende sua avaliação</h3>
+        <p class="lead-form__hint">Resposta em até 1 dia útil.</p>
+
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Como devemos te chamar?" />
         </div>
-        <div class="form-group">
-          <label for="form-whatsapp">WhatsApp</label>
-          <input type="tel" id="form-whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required />
+
+        <div class="field">
+          <label for="whatsapp">WhatsApp (com DDD)</label>
+          <input type="tel" id="whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000" />
         </div>
-        <div class="form-group">
-          <label for="form-email">E-mail</label>
-          <input type="email" id="form-email" name="email" placeholder="seu@email.com" required />
+
+        <div class="field">
+          <label for="quem">Quem realizará o procedimento?</label>
+          <div class="select-wrap">
+            <select id="quem" name="quem" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="eu">Eu mesmo(a)</option>
+              <option value="filho">Meu filho(a)</option>
+              <option value="outro">Outra pessoa</option>
+            </select>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="form-procedure">Quem realizará o procedimento?</label>
-          <select id="form-procedure" name="procedimento" required>
-            <option value="" disabled selected>Selecione uma opção</option>
-            <option value="eu">Eu mesmo(a)</option>
-            <option value="filho">Meu filho(a)</option>
-            <option value="outro">Outra pessoa</option>
-          </select>
+
+        <button type="submit" class="btn btn--primary btn--block">
+          Quero mais informações
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </button>
+
+        <p class="lead-form__legal">
+          Ao enviar, você concorda com nossa <a href="#">Política de Privacidade</a>.
+        </p>
+
+        <div class="lead-form__success" role="status" aria-live="polite" hidden>
+          <strong>Recebemos seu contato!</strong>
+          Em breve nossa equipe entrará em contato pelo WhatsApp.
         </div>
-        <button type="submit" class="btn-primary btn-submit">Quero mais informações</button>
-        <p class="form-disclaimer">Ao enviar, você concorda com nossa <a href="#" id="openPrivacyFromForm">Política de Privacidade</a>.</p>
       </form>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════════════════ ABOUT THE DOCTOR ═══════════════════════ -->
-<section class="about-section" id="sobre">
-  <div class="container">
-    <div class="about-inner">
-      <div class="about-photo">
-        <div class="img-ph about-ph" role="img" aria-label="Dra. Raquel Almeida, foto em breve">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="24" cy="18" r="7"/><path d="M11 40c0-8 6-12 13-12s13 4 13 12"/>
-          </svg>
-          <span class="img-ph-label">Dra. Raquel Almeida</span>
-          <span class="img-ph-sub">Foto em breve</span>
+    </div>
+  </section>
+
+  <!-- ============ DOBRA 4 — SOBRE A MENTORA ============ -->
+  <section id="sobre" class="about" data-screen-label="04 Sobre">
+    <div class="container about__grid">
+
+      <div class="about__photo reveal">
+        <div class="about__photo-frame">
+          <img src="img/dra-raquel-editorial.png" alt="Dra. Raquel Almeida — Especialista em Otomodelação" />
         </div>
-        <div class="about-photo-accent" aria-hidden="true"></div>
+        <div class="about__sig" aria-hidden="true">
+          <span class="about__sig-label">Assinatura clínica</span>
+          <span class="about__sig-name">Dra. Raquel Almeida</span>
+        </div>
       </div>
-      <div class="about-text">
-        <div class="section-label" style="text-align:left;">
-          <span class="badge"><span class="badge-dot"></span>Sobre a especialista</span>
-        </div>
-        <h2 class="about-title">Especialista em <span class="gold-text">Otomodelação</span></h2>
-        <p>Referência na correção de orelha de abano, a Dra. Raquel é a mente por trás do sucesso do método Otoslim.</p>
-        <p>Com foco em estética minimamente invasiva, une tecnologia de ponta e atendimento humanizado para devolver a segurança de quem não quer mais se esconder.</p>
-        <div class="about-credentials">
-          <div class="credential">
-            <span class="credential-num">+1.200</span>
-            <span class="credential-label">Pacientes atendidos</span>
+
+      <div class="about__copy reveal">
+        <span class="eyebrow">
+          <span class="eyebrow__dot"></span>
+          Sobre a especialista
+        </span>
+        <h2 class="h2">Especialista em <em>Otomodelação</em></h2>
+        <p class="about__lede">
+          Especialista e referência em correção de orelha de abano, a <strong>Dra. Raquel</strong> é a mente por trás do sucesso do <strong>método Otoslim</strong>.
+        </p>
+        <p class="about__body">
+          Com foco em estética minimamente invasiva, sua trajetória é pautada pela segurança e pela entrega de resultados naturais. Na sua clínica, você encontra o equilíbrio perfeito entre tecnologia de ponta e um atendimento humanizado, focado em devolver a segurança de quem não quer mais se esconder.
+        </p>
+
+        <dl class="about__stats">
+          <div>
+            <dt>+1.200</dt>
+            <dd>pacientes atendidos</dd>
           </div>
-          <div class="credential">
-            <span class="credential-num">+8 anos</span>
-            <span class="credential-label">De experiência</span>
+          <div>
+            <dt>+8 anos</dt>
+            <dd>em estética minimamente invasiva</dd>
           </div>
-          <div class="credential">
-            <span class="credential-num">Otoslim®</span>
-            <span class="credential-label">Método autoral</span>
+          <div>
+            <dt>Otoslim®</dt>
+            <dd>método autoral exclusivo</dd>
           </div>
+        </dl>
+
+        <a href="#agendar" class="btn btn--dark">
+          Quero ser atendida pela Dra. Raquel
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ DOBRA 5 — RODAPÉ ============ -->
+  <footer class="footer" data-screen-label="05 Rodapé">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div>
+          <strong>Dra. Raquel Almeida</strong>
+          <span>Otomodelação · Hortolândia</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════════════════ FAQ ═══════════════════════ -->
-<section class="faq-section" id="faq">
-  <div class="container">
-    <div class="section-label">
-      <span class="badge"><span class="badge-dot"></span>Dúvidas frequentes</span>
+      <address class="footer__addr">
+        <span class="footer__addr-label">Endereço</span>
+        R. Zulmira Soares dos Santos, 39A<br />
+        Jardim Santa Clara do Lago, Hortolândia - SP<br />
+        CEP 13186-381
+      </address>
+
     </div>
-    <h2 class="section-title">Perguntas <span class="gold-text">frequentes</span></h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          O procedimento dói? Preciso de anestesia geral?
-          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <p>Não. O método Otoslim é minimamente invasivo, feito em consultório com anestesia local. Sem cortes e sem centro cirúrgico. Você sente apenas um leve desconforto durante a aplicação.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          O resultado é definitivo e natural?
-          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <p>Sim. A técnica reposiciona a cartilagem de forma definitiva, sem o estigma da "orelha operada" e sem cicatrizes visíveis. O resultado é harmônico e respeita a sua anatomia.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Como é a recuperação?
-          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <p>A recuperação é imediata: você retorna às suas atividades no mesmo dia, sem afastamento. Todo o pós-procedimento é acompanhado de perto pela nossa equipe.</p>
-        </div>
+
+    <div class="footer__bar">
+      <div class="container footer__bar-inner">
+        <span>© <span id="year">2026</span> Dra. Raquel · Todos os direitos reservados.</span>
+        <span class="footer__crn">CRM/SP · registro a confirmar</span>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-<footer>
-  <div class="container footer-inner">
-    <p class="footer-copy">© 2026 Dra. Raquel Almeida. Todos os direitos reservados.</p>
-    <div class="footer-right">
-      <a href="#" id="openTerms" class="footer-link">Termos de Uso</a>
-      <span class="footer-sep">·</span>
-      <a href="#" id="openPrivacy" class="footer-link">Política de Privacidade</a>
-      <span class="footer-sep">·</span>
-      <span class="footer-dev">Desenvolvido por <a href="https://azxperformance.com.br/clinica" target="_blank" rel="noopener noreferrer" class="footer-link azx-link">AZX Performance</a></span>
-    </div>
-  </div>
-</footer>
-
-<!-- ═══════════════════════ TERMS MODAL ═══════════════════════ -->
-<div class="modal-overlay" id="termsModal" aria-hidden="true">
-  <div class="modal-content" role="dialog" aria-labelledby="termsTitle">
-    <button class="modal-close" aria-label="Fechar">&times;</button>
-    <h2 id="termsTitle">Termos de Uso</h2>
-    <div class="modal-body">
-      <p><strong>1. Aceitação dos Termos</strong></p>
-      <p>Ao acessar e utilizar este site, você concorda com os presentes Termos de Uso. Caso não concorde com qualquer disposição, solicitamos que interrompa o uso imediatamente.</p>
-
-      <p><strong>2. Finalidade do Site</strong></p>
-      <p>Este site tem caráter exclusivamente informativo sobre os procedimentos de otomodelação oferecidos pela Dra. Raquel Almeida. As informações aqui contidas não substituem consulta presencial.</p>
-
-      <p><strong>3. Propriedade Intelectual</strong></p>
-      <p>Todo o conteúdo do site, incluindo textos, imagens, vídeos, logotipos e elementos gráficos, é protegido por direitos autorais e não pode ser reproduzido sem autorização prévia por escrito.</p>
-
-      <p><strong>4. Responsabilidade</strong></p>
-      <p>A Dra. Raquel Almeida se reserva o direito de alterar, atualizar ou remover conteúdos do site sem aviso prévio. Não nos responsabilizamos por decisões tomadas com base exclusivamente nas informações do site.</p>
-
-      <p><strong>5. Agendamentos</strong></p>
-      <p>Os agendamentos realizados por meio do formulário de contato estão sujeitos à confirmação pela equipe da clínica. O envio do formulário não garante a reserva de horário.</p>
-
-      <p><strong>6. Alterações</strong></p>
-      <p>Estes termos podem ser atualizados a qualquer momento. Recomendamos a consulta periódica desta página.</p>
-
-      <p><strong>7. Lei Aplicável</strong></p>
-      <p>Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil, em especial a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018) e o Código de Defesa do Consumidor.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════ PRIVACY MODAL ═══════════════════════ -->
-<div class="modal-overlay" id="privacyModal" aria-hidden="true">
-  <div class="modal-content" role="dialog" aria-labelledby="privacyTitle">
-    <button class="modal-close" aria-label="Fechar">&times;</button>
-    <h2 id="privacyTitle">Política de Privacidade</h2>
-    <div class="modal-body">
-      <p><strong>1. Introdução</strong></p>
-      <p>A Dra. Raquel Almeida está comprometida com a proteção dos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD, Lei nº 13.709/2018). Esta Política descreve como coletamos, utilizamos, armazenamos e protegemos suas informações.</p>
-
-      <p><strong>2. Dados Coletados</strong></p>
-      <p>Coletamos os seguintes dados pessoais por meio do formulário de contato: nome completo, número de WhatsApp, endereço de e-mail e responsável pelo procedimento. Esses dados são fornecidos voluntariamente pelo titular.</p>
-
-      <p><strong>3. Finalidade do Tratamento</strong></p>
-      <p>Os dados coletados são utilizados exclusivamente para: (a) entrar em contato para agendamento de avaliação; (b) envio de informações sobre o procedimento solicitado; (c) comunicação relacionada aos serviços da clínica.</p>
-
-      <p><strong>4. Base Legal</strong></p>
-      <p>O tratamento dos dados pessoais se dá com base no consentimento do titular (Art. 7º, I, da LGPD), fornecido no momento do envio do formulário.</p>
-
-      <p><strong>5. Compartilhamento de Dados</strong></p>
-      <p>Seus dados pessoais não serão compartilhados com terceiros, exceto quando necessário para o cumprimento de obrigações legais ou mediante seu consentimento expresso.</p>
-
-      <p><strong>6. Armazenamento e Segurança</strong></p>
-      <p>Os dados são armazenados em ambiente seguro, com medidas técnicas e administrativas adequadas para proteger contra acesso não autorizado, destruição, perda ou alteração.</p>
-
-      <p><strong>7. Direitos do Titular</strong></p>
-      <p>Conforme a LGPD, você tem direito a: (a) confirmar a existência de tratamento; (b) acessar seus dados; (c) corrigir dados incompletos ou desatualizados; (d) solicitar a anonimização, bloqueio ou eliminação de dados desnecessários; (e) revogar o consentimento a qualquer momento.</p>
-
-      <p><strong>8. Contato</strong></p>
-      <p>Para exercer seus direitos ou esclarecer dúvidas sobre o tratamento de dados, entre em contato pelo WhatsApp disponível neste site.</p>
-
-      <p><strong>9. Alterações</strong></p>
-      <p>Esta Política pode ser atualizada a qualquer momento. A versão vigente estará sempre disponível nesta página.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════ SCRIPTS ═══════════════════════ -->
-<script>
-  // ── CLEAN URL ──
-  try {
-    if (location.protocol !== 'file:' && location.pathname.endsWith('/index.html')) {
-      history.replaceState(null, '', location.pathname.replace('/index.html', '/') + location.search + location.hash);
-    }
-  } catch (e) { /* file:// ou ambiente sem History API: ignora */ }
-
-  // ── THEME ──
-  const html = document.documentElement;
-  const saved = localStorage.getItem('raquel-theme') || 'light';
-  html.setAttribute('data-theme', saved);
-
-  function toggleTheme() {
-    const current = html.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('raquel-theme', next);
-  }
-
-  document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-  document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
-
-  // ── NAV SCROLL ──
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
-
-  // ── HAMBURGER ──
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  function openMenu() {
-    hamburger.classList.add('open');
-    mobileMenu.classList.add('open');
-    mobileMenu.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
-  });
-
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // ── SCROLL ANIMATIONS ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
-    });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.ba-card, .video-card, .contact-inner, .about-inner').forEach(el => {
-    el.classList.add('animate-on-scroll');
-    observer.observe(el);
-  });
-
-  // ── WHATSAPP MASK ──
-  const whatsInput = document.getElementById('form-whatsapp');
-  whatsInput.addEventListener('input', function(e) {
-    let v = e.target.value.replace(/\D/g, '');
-    if (v.length > 11) v = v.slice(0, 11);
-    if (v.length > 7) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
-    else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
-    else if (v.length > 0) v = `(${v}`;
-    e.target.value = v;
-  });
-
-  // ── FORM VALIDATION ──
-  const fields = {
-    nome:         document.getElementById('form-name'),
-    whatsapp:     document.getElementById('form-whatsapp'),
-    email:        document.getElementById('form-email'),
-    procedimento: document.getElementById('form-procedure')
-  };
-
-  function setError(el, hasError) {
-    el.style.borderColor = hasError ? '#c0392b' : '';
-    el.style.boxShadow   = hasError ? '0 0 0 3px rgba(192,57,43,0.18)' : '';
-  }
-
-  Object.values(fields).forEach(el => {
-    el.addEventListener('input',  () => setError(el, false));
-    el.addEventListener('change', () => setError(el, false));
-  });
-
-  function validateForm() {
-    let valid = true;
-    const { nome, whatsapp, email, procedimento } = fields;
-    if (!nome.value.trim())        { setError(nome, true);         valid = false; }
-    if (!whatsapp.value.trim())    { setError(whatsapp, true);     valid = false; }
-    if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()))
-                                   { setError(email, true);        valid = false; }
-    if (!procedimento.value)       { setError(procedimento, true); valid = false; }
-    return valid;
-  }
-
-  // ── FORM SUBMIT ──
-  document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    if (!validateForm()) return;
-    const btn = this.querySelector('.btn-submit');
-    const originalText = btn.textContent;
-
-    btn.textContent = 'Enviando…';
-    btn.disabled = true;
-
-    const agora = new Date();
-    const pad = n => String(n).padStart(2, '0');
-    const meses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
-    const payload = {
-      nome:        this.nome.value.trim(),
-      telefone:    this.whatsapp.value.trim(),
-      email:       this.email.value.trim(),
-      procedimento: this.procedimento.value,
-      origem:      window.location.href,
-      data:        `${pad(agora.getDate())} ${meses[agora.getMonth()]}. ${agora.getFullYear()}`,
-      hora:        `${pad(agora.getHours())}h${pad(agora.getMinutes())}`
-    };
-
-    try {
-      // TODO: substituir pela URL real do webhook da Dra. Raquel antes do deploy
-      const res = await fetch('YOUR_MAKE_WEBHOOK_URL', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      if (!res.ok) throw new Error('status ' + res.status);
-
-      // Lead (Pixel + CAPI) só após envio validado e bem-sucedido
-      if (window.geoTrackLead) { try { await window.geoTrackLead(); } catch (e) {} }
-
-      window.location.href = 'obrigado';
-    } catch (err) {
-      btn.textContent = 'Erro ao enviar. Tente novamente.';
-      btn.style.background = '#c0392b';
-      btn.disabled = false;
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-      }, 4000);
-    }
-  });
-
-  // ── MODALS ──
-  function openModal(id) {
-    const m = document.getElementById(id);
-    m.classList.add('open');
-    m.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(id) {
-    const m = document.getElementById(id);
-    m.classList.remove('open');
-    m.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  document.getElementById('openTerms').addEventListener('click', e => { e.preventDefault(); openModal('termsModal'); });
-  document.getElementById('openPrivacy').addEventListener('click', e => { e.preventDefault(); openModal('privacyModal'); });
-  document.getElementById('openPrivacyFromForm').addEventListener('click', e => { e.preventDefault(); openModal('privacyModal'); });
-
-  document.querySelectorAll('.modal-close').forEach(btn => {
-    btn.addEventListener('click', () => {
-      closeModal(btn.closest('.modal-overlay').id);
-    });
-  });
-
-  document.querySelectorAll('.modal-overlay').forEach(overlay => {
-    overlay.addEventListener('click', e => {
-      if (e.target === overlay) closeModal(overlay.id);
-    });
-  });
-
-  // ── FAQ ACCORDION ──
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      // close all
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      });
-      // open clicked if it was closed
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
-    }
-  });
-</script>
-
+  <script src="app.js" defer></script>
 </body>
 </html>

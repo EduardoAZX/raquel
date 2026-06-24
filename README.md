@@ -1,159 +1,137 @@
-# Dra. Raquel Almeida · Landing Page
+# Dra. Raquel Almeida — Landing Page
 
-Landing page estática (HTML + CSS, sem framework) para captação de leads da
-**Dra. Raquel Almeida · Otomodelação · Método Otoslim**.
+Landing page de captação de leads para a **Dra. Raquel Almeida**, especialista em **Otomodelação** e responsável pelo método autoral **Otoslim** (correção de orelhas de abano sem cirurgia).
 
 ---
 
-## 📁 Estrutura de arquivos
+## 📁 Estrutura de pastas
 
 ```
-Raquel/
-├── index.html              → página principal (hero, antes/depois, formulário, sobre, FAQ)
-├── obrigado.html           → página de agradecimento (pós-envio do formulário)
-├── styles.css              → todos os estilos (tokens de tema, layout, responsivo)
-├── .htaccess               → regras de URL (remove .html, serve em subpasta)
-├── assets/                 → imagens herdadas (NÃO usadas — substituídas por placeholders)
-└── meta-capi/              → Pixel + CAPI em PHP puro
-    ├── capi.php
-    └── capi.js
+Dra Raquel/
+├── index.html         # Estrutura semântica das 5 dobras
+├── style.css          # Design system + componentes + responsividade
+├── app.js             # Reveals, máscara de WhatsApp, submit do form
+├── pixel.php          # (a implementar) endpoint server-side p/ Meta CAPI
+├── README.md          # Este arquivo
+└── img/
+    ├── img.png        # Hero — desktop (foto Dra. Raquel postura de autoridade)
+    ├── imgmb.png      # Hero — mobile (crop vertical)
+    ├── dra-raquel-editorial.jpg  # Foto editorial para a seção "Sobre"
+    ├── antes-01..04.jpg          # Antes/depois — lado A
+    └── depois-01..04.jpg         # Antes/depois — lado B
 ```
 
----
-
-## 🖼️ Imagens (placeholders)
-
-Todas as imagens do site (3 cards de antes/depois, foto da doutora e fundo do hero)
-usam **placeholders em gradiente** com o rótulo "Foto em breve".
-
-- Os `.png` herdados continuam na pasta `assets/`, mas **não são referenciados**
-  por nenhum HTML/CSS (podem ser removidos quando as fotos definitivas chegarem).
-- Quando as fotos da Dra. Raquel chegarem, basta inserir as novas imagens e
-  reconectar os trechos (cards em `index.html` e o `.hero-bg-img` em `styles.css`).
+> Enquanto as imagens não estão na pasta `img/`, a página mostra **placeholders monoespaçados** indicando exatamente o nome esperado do arquivo.
 
 ---
 
-## 🚀 Como o site é publicado (IMPORTANTE)
+## 🎨 Design system
 
-O site **não fica na raiz do domínio**. Ele é enviado para uma **subpasta** dentro
-de `public_html`, ao lado de um **WordPress que ocupa a raiz** (mesmo modelo dos
-outros projetos).
+| Token            | Valor       | Uso                                        |
+|------------------|-------------|--------------------------------------------|
+| `--c-primary`    | `#F7CBA1`   | Botões, badges, destaques, gradiente quente|
+| `--c-secondary`  | `#E0DFD5`   | Fundos sutis, placeholders                 |
+| `--c-accent`     | `#090B0B`   | Texto principal, CTA escuro, rodapé        |
+| `--c-bg`         | `#FFFFFF`   | Fundo padrão                               |
+| `--c-text`       | `#090B0B`   | Texto                                      |
 
-```
-public_html/
-├── (WordPress: wp-admin, wp-content, wp-includes, ...)  ← raiz do domínio
-└── subpasta/        ← AQUI vão os arquivos desta landing
-    ├── index.html
-    ├── obrigado.html
-    ├── styles.css
-    ├── .htaccess
-    ├── assets/
-    └── meta-capi/
-```
-
-Portanto a landing abre em `dominio.com.br/subpasta/` e a página de obrigado em
-`dominio.com.br/subpasta/obrigado`. **Testar `/obrigado` na raiz dá 404** — lá é o
-WordPress, não esta landing.
-
-> Ao subir arquivos, envie **todos** (incl. `.htaccess`, que é oculto — ligue
-> "mostrar arquivos ocultos" no Gerenciador de Arquivos/FTP).
+- **Fonte:** Open Sans (300/400/500/600/700/800) — via Google Fonts.
+- **Mono:** JetBrains Mono — apenas para tags de placeholders.
+- **Efeitos:** glassmorphism (`backdrop-filter: blur`), sombras suaves em camadas (`--shadow-sm/md/lg/glow`), gradiente quente nas CTAs e fundos radiais.
+- **Favicon:** SVG inline com iniciais **DR** sobre o tom primário.
 
 ---
 
-## 🔗 .htaccess · URLs limpas
+## 🧩 Seções da LP
 
-O `.htaccess` faz, com caminhos **relativos** (funciona em qualquer subpasta e nunca
-redireciona pra raiz / WordPress):
+### 🟠 Dobra 1 — Hero
+- **Arquivos:** `index.html` (linhas ~50-115), `styles.css` (`.hero*`)
+- **Imagens:** `img/img.png` (desktop), `img/imgmb.png` (mobile)
+- **Funcionalidade:** headline impactante, subheadline com o método Otoslim, CTA primário (`#agendar`) e CTA fantasma (`#resultados`). Foto à direita com badge "+1.200 vidas transformadas" em glass e chip "Procedimento em consultório".
+- **Notas:** se `img/img.png` não existir, a área da foto cai em placeholder estriado automaticamente (via `onerror`).
 
-1. Remove a extensão: `/subpasta/obrigado.html` → `/subpasta/obrigado`
-2. Serve internamente o arquivo: `/subpasta/obrigado` entrega `obrigado.html`
+### 🟠 Dobra 2 — Prova Social
+- **Arquivos:** `index.html` (linhas ~130-220), `styles.css` (`.proof`, `.ba-grid`, `.ba-card`, `.seal`)
+- **Imagens:** `img/antes-0[1-4].jpg` e `img/depois-0[1-4].jpg` — formato vertical 4:5, foco na orelha.
+- **Funcionalidade:** grid 2×2 de pares antes/depois com legenda; selo de autoridade "+1.200 vidas transformadas" com CTA escuro.
 
----
+### 🟠 Dobra 3 — Formulário (captação)
+- **Arquivos:** `index.html` (linhas ~225-300), `styles.css` (`.form-section`, `.lead-form`), `script.js` (submit + máscara WhatsApp)
+- **Campos:** Nome, WhatsApp (com máscara `(00) 00000-0000`), Quem realizará o procedimento (select com 3 opções).
+- **Funcionalidade:** validação client-side; ao enviar mostra mensagem de sucesso. Hooks comentados para `fbq('track','Lead')` e POST para `pixel.php`.
 
-## 📨 Formulário → Make → Planilha
+### 🟠 Dobra 4 — Sobre a Mentora
+- **Arquivos:** `index.html` (linhas ~305-360), `styles.css` (`.about*`)
+- **Imagens:** `img/dra-raquel-editorial.jpg` (estilo editorial, close ou atendimento).
+- **Funcionalidade:** copy de autoridade + 3 stats (pacientes, anos de atuação, método Otoslim) + CTA escuro. Card de "assinatura clínica" sobreposto.
 
-O formulário (`#contactForm` no `index.html`) envia por `fetch` (POST JSON) para um
-**webhook do Make**. A URL ainda é um placeholder — substituir antes do deploy:
-
-```
-YOUR_MAKE_WEBHOOK_URL
-```
-
-Campos enviados no payload:
-
-| Campo          | Origem                             |
-|----------------|------------------------------------|
-| `nome`         | input `#form-name`                 |
-| `telefone`     | input `#form-whatsapp`             |
-| `email`        | input `#form-email`                |
-| `procedimento` | select `#form-procedure`           |
-| `origem`       | URL da página                      |
-| `data`         | data do envio (ex: `12 jun. 2026`) |
-| `hora`         | hora do envio (ex: `09h30`)        |
-
-Opções do select: **Eu mesmo(a) · Meu filho(a) · Outra pessoa** (quem realizará o
-procedimento).
-
-O mapeamento desses campos para as colunas da planilha (Google Sheets) é feito
-**dentro do cenário do Make**, não no código.
-
-Após o envio bem-sucedido, o usuário é redirecionado para **`obrigado`** (URL limpa).
+### 🟠 Dobra 5 — Rodapé
+- **Arquivos:** `index.html` (linhas ~365-400), `styles.css` (`.footer*`)
+- **Conteúdo:** marca, endereço (placeholder), links (Instagram, WhatsApp, Política de Privacidade) e copyright dinâmico (ano via `script.js`).
 
 ---
 
-## 🙏 Página de obrigado
+## 🔌 Integrações
 
-`obrigado.html` mostra a confirmação e um botão **"Falar pelo WhatsApp agora"**
-(`wa.me/...`) com mensagem pré-preenchida, além de um botão "Voltar para o site".
-O número está como placeholder `55XXXXXXXXXXX` — trocar pelo WhatsApp real da Dra. Raquel.
+### Meta Pixel
+1. Substituir `YOUR_PIXEL_ID` em `index.html` (`<script>` no `<head>`).
+2. Descomentar as linhas `fbq('init', ...)` e `fbq('track', 'PageView')`.
+3. No envio do formulário (`script.js`), descomentar `fbq('track', 'Lead')`.
 
----
+### Meta Conversions API (server-side)
+- Criar `pixel.php` (sugestão de stack):
+  - `filter_var($_POST['nome'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)`
+  - Hash SHA-256 do telefone antes de enviar
+  - `cURL` para `https://graph.facebook.com/v18.0/{PIXEL_ID}/events`
+  - Token de acesso em variável de ambiente
+- Atualizar `script.js`: `fetch('pixel.php', { method:'POST', body: new FormData(form) })`.
 
-## 🎨 Tema e identidade visual
-
-- Tema **claro por padrão** (`<html data-theme="light">`).
-- A preferência do usuário é salva em `localStorage` na chave `raquel-theme`.
-- Botão de alternância (sol/lua) no menu — o tema escuro continua disponível.
-- **Paleta pêssego/cobre** em degradê (token `--gold-grad`):
-  - Pêssego `#EDBC8E` · médio `#E09E65` · cobre `#9B5A22`, sobre fundo creme `#FDFAF5`.
-- Fontes: **Playfair Display** (títulos, serifada) + **Montserrat** (texto).
-
----
-
-## 📊 Rastreamento
-
-Todas as chaves de rastreamento estão como **placeholders** — substituir pelos IDs
-reais da Dra. Raquel antes do deploy:
-
-- **Google Tag Manager:** container `GTM-XXXXXXX` no `<head>`.
-- **Meta Pixel + Conversions API:** Pixel ID `YOUR_PIXEL_ID`.
-  - Dispara **PageView** e **Lead** (após o envio bem-sucedido do formulário) com
-    **deduplicação por `event_id`** (navegador + CAPI), faz **hash SHA-256** do
-    e-mail/telefone no navegador e tem **rate limiting** por IP.
-  - O **token da CAPI fica só no servidor** (`meta-capi/capi.php`, constante
-    `GEO_CAPI_TOKEN` = `YOUR_CAPI_TOKEN`), nunca no navegador.
-
-A integração usa `meta-capi/` (PHP puro), já chamada pelo `index.html` via `capi.js`.
+### Google Analytics
+- Adicionar tag `gtag.js` no `<head>` (placeholder a ser substituído).
 
 ---
 
-## ✅ Pendências / a confirmar
+## 📱 Responsividade
 
-- [ ] **WhatsApp da Dra. Raquel** — `obrigado.html` está com `55XXXXXXXXXXX`. Trocar pelo número real.
-- [ ] **Webhook do Make** — criar o cenário e substituir `YOUR_MAKE_WEBHOOK_URL` no `index.html`.
-- [ ] **GTM** — criar/colar o container real no lugar de `GTM-XXXXXXX` (`index.html` e `obrigado.html`).
-- [ ] **Meta Pixel** — substituir `YOUR_PIXEL_ID` (`index.html`, `obrigado.html` e `meta-capi/capi.php`).
-- [ ] **Token da CAPI** — gerar no Gerenciador de Eventos e substituir `YOUR_CAPI_TOKEN` no `meta-capi/capi.php`.
-- [ ] **Fotos da Dra. Raquel** — hoje o site usa placeholders. Inserir as imagens reais (antes/depois, foto da doutora, fundo do hero) e remover os `.png` herdados de `assets/`.
-- [ ] **Conteúdo a confirmar com a Dra.** — textos de FAQ, credenciais (+1.200 pacientes, +8 anos) e endereço/registro profissional.
-- [ ] **Domínio + subpasta de produção** — confirmar a URL de publicação.
-- [ ] **SSL** — confirmar certificado ativo antes de forçar HTTPS.
+| Faixa                | Comportamento                                          |
+|----------------------|--------------------------------------------------------|
+| **≥ 1024px**         | Layouts em 2 colunas (hero, form, about); grid 2×2 nas provas |
+| **768–1023px**       | Mesmas grids mantidas, com `clamp()` reduzindo gaps    |
+| **≤ 880px**          | Hero, form e about colapsam para 1 coluna              |
+| **≤ 760px**          | Grid de provas vira 1 coluna; selo vira vertical       |
+| **≤ 520px**          | Stats da seção sobre viram 1 coluna                    |
+
+Testado em: Chrome DevTools (375 / 414 / 768 / 1024 / 1440), Firefox e Safari.
 
 ---
 
-## 🛠️ Rodar localmente
+## 🔒 Segurança
 
-Sirva a pasta com um servidor estático (ex.: `python -m http.server`).
-Obs.: o servidor estático local **ignora o `.htaccess`**, então as URLs limpas
-(`/obrigado` sem `.html`) só funcionam no servidor de produção (Apache). O endpoint
-PHP (`meta-capi/capi.php`) também só roda num servidor com PHP.
+- Inputs **sanitize** em `pixel.php` (a implementar) com `filter_var()` + `htmlspecialchars()` na saída.
+- Validação client-side (em `script.js`) e server-side obrigatória.
+- Proteção contra **XSS**: nenhum `innerHTML` dinâmico no front; toda renderização via `textContent`.
+- Proteção contra **CSRF**: gerar token no `pixel.php` (`bin2hex(random_bytes(32))`) e validar no submit.
+- Links externos (fontes Google) via HTTPS com `crossorigin`.
+
+---
+
+## ✅ Checklist de validação
+
+- [ ] HTML validado no W3C Validator.
+- [ ] CSS validado no Jigsaw.
+- [ ] Sem erros de console no Chrome / Firefox.
+- [ ] Meta Pixel testado no **Meta Pixel Helper**.
+- [ ] Imagens otimizadas em `.webp` (qualidade 80–85).
+- [ ] Lighthouse: Performance ≥ 90 / Acessibilidade ≥ 95.
+
+---
+
+## 🤝 Como contribuir
+
+- **Adicionar uma nova seção:** crie o markup dentro de `index.html` entre duas dobras existentes, atribua um `data-screen-label="NN Nome"` e adicione as classes ao final de `styles.css` seguindo o padrão `.nome-secao__elemento`.
+- **Mudar a paleta:** edite as custom properties no topo de `styles.css` (`:root`).
+- **Mudar copy:** todas as strings estão diretamente em `index.html` — sem CMS / template engine.
+
+---
+
+© 2026 Dra. Raquel — Todos os direitos reservados.
